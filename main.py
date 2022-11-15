@@ -35,7 +35,7 @@ for model in models:
                                                                                         product=model.product))
         else:
             print("{} is ready.".format(app))
-"""
+
 # reboot all test devices and unlock, also wait 5 min to be stable
 for model in models:
     model.reboot()
@@ -57,7 +57,7 @@ while True:
         print("stable done.")
         break
     time.sleep(20)
-"""
+
 # test start!
 sequence = 1
 scenarios = scenario.SCENARIO

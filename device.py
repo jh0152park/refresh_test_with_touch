@@ -11,8 +11,21 @@ class Device:
         self.model = model
         self.product = product
 
+        # command for press button
         self.home = "adb -s " + self.id + " shell input keyevent KEYCODE_HOME"
         self.recent_app = "adb -s " + self.id + " shell input keyevent KEYCODE_APP_SWITCH"
+
+        # command for get memory information from device
+        self.proc_meminfo = "adb -s " + self.id + " shell cat /proc/meminfo"
+        self.meminfo_extra = "adb -s " + self.id + " shell cat /proc/meminfo_extra"
+        self.dumpsys_meminfo = "adb -s " + self.id + " shell dumpsys meminfo"
+
+        # command for get full time information
+        self.logcat_log = "adb -s " + self.id + " logcat"
+        self.event_log = "adb -s " + self.id + " logcat -b events -v time"
+
+        # command for get bugreport log
+        self.bugreport = "adb -s " + self.id + " bugreport"
 
         # physical display resolution of device
         # example 1080 * 1920
@@ -91,7 +104,7 @@ class Device:
          # UnicodeDecodeError: 'cp949' codec can't decode byte 0x9c in position 9089: illegal multibyte sequence
          # occurred above error, so can not read directly with os.popen().read()
         """
-        os.popen(cmd)
+        os.system(cmd)
         file = open("window_dump.xml", "r", encoding="UTF-8")
         xml = file.readlines()
         file.close()

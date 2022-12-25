@@ -6,8 +6,9 @@ This script helpful to check about the multitasking performance every single app
 
 Currently support only windows PC and used adb input tap and input swipe command like below.
 
-adb -s [device id] shell input tap [x] [y]
-adb -s [device id] shell input swipe [from x] [from y] [to x] [to y]
++ adb -s [device id] shell input tap [x] [y]
+
++ adb -s [device id] shell input swipe [from x] [from y] [to x] [to y]
 
 Test application secanrio included 20 different applications also its 1 cycle(shopping, game, sns, etc...)
 
